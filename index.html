@@ -1,1 +1,1509 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Materials Vocabulary: MatVoc-Core</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://stream-ontology.com/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://stream-ontology.com/","name":"Materials Vocabulary: MatVoc-Core", "headline":"The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project.", "datePublished":"Tue Jun 07 08:42:14 UTC 2022", "author":[{"@type":"Person","name":"Javad Chamanara"},{"@type":"Person","name":"Tatyana Sheveleva"}], "contributor":[{"@type":"Person","name":"https://aksw.org/KurtJunghanns","url":"https://aksw.org/KurtJunghanns"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Materials Vocabulary: MatVoc-Core</h1>
+
+
+<dl>
+<dt>Authors:</dt>
+<dd>Javad Chamanara</dd><dd>Tatyana Sheveleva</dd>
+
+<dt>Contributors:</dt>
+<dd><a href="https://aksw.org/KurtJunghanns">https://aksw.org/KurtJunghanns</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-MIT%20License-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Javad Chamanara, Tatyana Sheveleva. Materials Vocabulary: MatVoc-Core.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project.</span>
+</div>
+<div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Materials Vocabulary: MatVoc-Core: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#matvoc-core/Configuration"
+         title="http://stream-ontology.com/matvoc-core/Configuration">Configuration</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Dataset" title="http://stream-ontology.com/matvoc-core/Dataset">Dataset</a>
+   </li>
+   <li>
+      <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"
+         title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity">
+         <span>entity</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Entity" title="http://stream-ontology.com/matvoc-core/Entity">
+         <span>entity</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Enumeration"
+         title="http://stream-ontology.com/matvoc-core/Enumeration">Enumeration</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Experiment"
+         title="http://stream-ontology.com/matvoc-core/Experiment">Experiment</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Formula" title="http://stream-ontology.com/matvoc-core/Formula">Formula</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Material" title="http://stream-ontology.com/matvoc-core/Material">
+         <span>material</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-emmoItem" title="http://stream-ontology.com/matvoc-emmoItem">
+         <span>matvoc emmo item</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Method" title="http://stream-ontology.com/matvoc-core/Method">Method</a>
+   </li>
+   <li>
+      <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection"
+         title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection">
+         <span>observation collection</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Observer" title="http://stream-ontology.com/matvoc-core/Observer">Observer</a>
+   </li>
+   <li>
+      <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol"
+         title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
+         <span>protocol</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Sample" title="http://stream-ontology.com/matvoc-core/Sample">
+         <span>sample</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Simulation"
+         title="http://stream-ontology.com/matvoc-core/Simulation">Simulation</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Study" title="http://stream-ontology.com/matvoc-core/Study">Study</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/Term" title="http://stream-ontology.com/matvoc-core/Term">Term</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#matvoc-core/defines" title="http://stream-ontology.com/matvoc-core/defines">defines</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasMetadata"
+         title="http://stream-ontology.com/matvoc-core/hasMetadata">has metadata</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasMethod" title="http://stream-ontology.com/matvoc-core/hasMethod">has method</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasProtocol"
+         title="http://stream-ontology.com/matvoc-core/hasProtocol">has protocol</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasRun" title="http://stream-ontology.com/matvoc-core/hasRun">has run</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasTag" title="http://stream-ontology.com/matvoc-core/hasTag">has tag</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/isObservedBy"
+         title="http://stream-ontology.com/matvoc-core/isObservedBy">is observed by</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/isRunOf" title="http://stream-ontology.com/matvoc-core/isRunOf">is run of</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/isSampleOf"
+         title="http://stream-ontology.com/matvoc-core/isSampleOf">is sample of</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/observes" title="http://stream-ontology.com/matvoc-core/observes">observes</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/restrictedBy"
+         title="http://stream-ontology.com/matvoc-core/restrictedBy">restricted by</a>
+   </li>
+   <li>
+      <a href="#matvoc-core/resultsIn" title="http://stream-ontology.com/matvoc-core/resultsIn">results in</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#matvoc-core/finishedAt"
+         title="http://stream-ontology.com/matvoc-core/finishedAt">
+         <span>finished at</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/startedAt" title="http://stream-ontology.com/matvoc-core/startedAt">
+         <span>started at</span>
+      </a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasRawValue"
+         title="http://stream-ontology.com/matvoc-core/hasRawValue">
+         <span>has raw value</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred namespace prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred namespace uri</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/schemaVersion" title="http://schema.org/schemaVersion">
+         <span>schema version</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+         <span>status</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#matvoc-core/finishedAt"
+         title="http://stream-ontology.com/matvoc-core/finishedAt">
+         <span>finished at</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/hasRawValue"
+         title="http://stream-ontology.com/matvoc-core/hasRawValue">
+         <span>has raw value</span>
+      </a>
+   </li>
+   <li>
+      <a href="#matvoc-core/startedAt" title="http://stream-ontology.com/matvoc-core/startedAt">
+         <span>started at</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Materials Vocabulary: MatVoc-Core classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Materials Vocabulary: MatVoc-Core.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#matvoc-core/Configuration"
+            title="http://stream-ontology.com/matvoc-core/Configuration">Configuration</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Dataset" title="http://stream-ontology.com/matvoc-core/Dataset">Dataset</a>
+      </li>
+      <li>
+         <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"
+            title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity">
+            <span>entity</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Entity" title="http://stream-ontology.com/matvoc-core/Entity">
+            <span>entity</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Enumeration"
+            title="http://stream-ontology.com/matvoc-core/Enumeration">Enumeration</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Experiment"
+            title="http://stream-ontology.com/matvoc-core/Experiment">Experiment</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Formula" title="http://stream-ontology.com/matvoc-core/Formula">Formula</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Material" title="http://stream-ontology.com/matvoc-core/Material">
+            <span>material</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-emmoItem" title="http://stream-ontology.com/matvoc-emmoItem">
+            <span>matvoc emmo item</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Method" title="http://stream-ontology.com/matvoc-core/Method">Method</a>
+      </li>
+      <li>
+         <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection"
+            title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection">
+            <span>observation collection</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Observer" title="http://stream-ontology.com/matvoc-core/Observer">Observer</a>
+      </li>
+      <li>
+         <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol"
+            title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
+            <span>protocol</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Sample" title="http://stream-ontology.com/matvoc-core/Sample">
+            <span>sample</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Simulation"
+            title="http://stream-ontology.com/matvoc-core/Simulation">Simulation</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Study" title="http://stream-ontology.com/matvoc-core/Study">Study</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/Term" title="http://stream-ontology.com/matvoc-core/Term">Term</a>
+      </li>
+   </ul>
+   <div class="entity" id="matvoc-core/Configuration">
+      <h3>Configuration<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Configuration</p>
+      <div class="comment">
+         <span class="markdown">A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Term" title="http://stream-ontology.com/matvoc-core/Term">Term</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Dataset">
+      <h3>Dataset<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Dataset</p>
+      <div class="comment">
+         <span class="markdown">A set of related observations with their measurements and values, obtained by a single run.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#matvoc-core/hasMetadata"
+               title="http://stream-ontology.com/matvoc-core/hasMetadata">has metadata</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/resultsIn" title="http://stream-ontology.com/matvoc-core/resultsIn">results in</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity">
+      <h3>entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#matvoc-core/Entity" title="http://stream-ontology.com/matvoc-core/Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Entity">
+      <h3>entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Entity</p>
+      <div class="comment">
+         <span class="markdown">Entity class is an abstract entity which is being processed within an experiment or simulated.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/sosa/FeatureOfInterest"
+               target="_blank"
+               title="http://www.w3.org/ns/sosa/FeatureOfInterest">feature of interest</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Material" title="http://stream-ontology.com/matvoc-core/Material">material</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/isSampleOf"
+               title="http://stream-ontology.com/matvoc-core/isSampleOf">is sample of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Enumeration">
+      <h3>Enumeration<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Enumeration</p>
+      <div class="comment">
+         <span class="markdown">A terminology, e.g., a closed list of vocabularies that can be used to limit the valid values of a measurement.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#Concept"
+               target="_blank"
+               title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Term" title="http://stream-ontology.com/matvoc-core/Term">Term</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Experiment">
+      <h3>Experiment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Experiment</p>
+      <div class="comment">
+         <span class="markdown">A single, unique, and identifiable experiment.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Study" title="http://stream-ontology.com/matvoc-core/Study">Study</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Formula">
+      <h3>Formula<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Formula</p>
+      <div class="comment">
+         <span class="markdown">define formula's associated with the material.</span>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/Material">
+      <h3>material<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Material</p>
+      <div class="comment">
+         <span class="markdown">Material class is a representative of a feature of interest on which an experiment or a simulation is made.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Entity" title="http://stream-ontology.com/matvoc-core/Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-emmoItem">
+      <h3>matvoc emmo item<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-emmoItem</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#matvoc-core/Entity" title="http://stream-ontology.com/matvoc-core/Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Method">
+      <h3>Method<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Method</p>
+      <div class="comment">
+         <span class="markdown">The method of performing an experiment, observation, or measurement.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/hasMethod" title="http://stream-ontology.com/matvoc-core/hasMethod">has method</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection">
+      <h3>observation collection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#matvoc-core/Dataset" title="http://stream-ontology.com/matvoc-core/Dataset">Dataset</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Observer">
+      <h3>Observer<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Observer</p>
+      <div class="comment">
+         <span class="markdown">An agent that can observe an observation. It can be a human, device, sensor, or software.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://xmlns.com/foaf/0.1/Agent"
+               target="_blank"
+               title="http://xmlns.com/foaf/0.1/Agent">agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#matvoc-core/observes" title="http://stream-ontology.com/matvoc-core/observes">observes</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/isObservedBy"
+               title="http://stream-ontology.com/matvoc-core/isObservedBy">is observed by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">
+      <h3>protocol<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#matvoc-core/Method" title="http://stream-ontology.com/matvoc-core/Method">Method</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/hasProtocol"
+               title="http://stream-ontology.com/matvoc-core/hasProtocol">has protocol</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Run">
+      <h3>Run<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Run</p>
+      <div class="comment">
+         <span class="markdown">A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#matvoc-core/defines" title="http://stream-ontology.com/matvoc-core/defines">defines</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#matvoc-core/finishedAt"
+               title="http://stream-ontology.com/matvoc-core/finishedAt">finished at</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#matvoc-core/hasMethod" title="http://stream-ontology.com/matvoc-core/hasMethod">has method</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#matvoc-core/hasProtocol"
+               title="http://stream-ontology.com/matvoc-core/hasProtocol">has protocol</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#matvoc-core/isRunOf" title="http://stream-ontology.com/matvoc-core/isRunOf">is run of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#matvoc-core/restrictedBy"
+               title="http://stream-ontology.com/matvoc-core/restrictedBy">restricted by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#matvoc-core/resultsIn" title="http://stream-ontology.com/matvoc-core/resultsIn">results in</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#matvoc-core/startedAt" title="http://stream-ontology.com/matvoc-core/startedAt">started at</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/hasRun" title="http://stream-ontology.com/matvoc-core/hasRun">has run</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Sample">
+      <h3>sample<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Sample</p>
+      <div class="comment">
+         <span class="markdown">Sample is a class representing a subset of a material that is the object of an experiment or a simulation.</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/sosa/Sample"
+               target="_blank"
+               title="http://www.w3.org/ns/sosa/Sample">sample</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#matvoc-core/isSampleOf"
+               title="http://stream-ontology.com/matvoc-core/isSampleOf">is sample of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Simulation">
+      <h3>Simulation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Simulation</p>
+      <div class="comment">
+         <span class="markdown">A single, unique, and identifiable simulation.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Study" title="http://stream-ontology.com/matvoc-core/Study">Study</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Study">
+      <h3>Study<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Study</p>
+      <div class="comment">
+         <span class="markdown">An endeavor that adheres to scientific research design to obtain a result or an insight.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Experiment"
+               title="http://stream-ontology.com/matvoc-core/Experiment">Experiment</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#matvoc-core/Simulation"
+               title="http://stream-ontology.com/matvoc-core/Simulation">Simulation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#matvoc-core/hasRun" title="http://stream-ontology.com/matvoc-core/hasRun">has run</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/isRunOf" title="http://stream-ontology.com/matvoc-core/isRunOf">is run of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/Term">
+      <h3>Term<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/Term</p>
+      <div class="comment">
+         <span class="markdown">A term or condition that applies to an observation or a run.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#matvoc-core/Configuration"
+               title="http://stream-ontology.com/matvoc-core/Configuration">Configuration</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#matvoc-core/Enumeration"
+               title="http://stream-ontology.com/matvoc-core/Enumeration">Enumeration</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#matvoc-core/restrictedBy"
+               title="http://stream-ontology.com/matvoc-core/restrictedBy">restricted by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#matvoc-core/defines" title="http://stream-ontology.com/matvoc-core/defines">defines</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasMetadata"
+            title="http://stream-ontology.com/matvoc-core/hasMetadata">has metadata</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasMethod" title="http://stream-ontology.com/matvoc-core/hasMethod">has method</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasProtocol"
+            title="http://stream-ontology.com/matvoc-core/hasProtocol">has protocol</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasRun" title="http://stream-ontology.com/matvoc-core/hasRun">has run</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasTag" title="http://stream-ontology.com/matvoc-core/hasTag">has tag</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/isObservedBy"
+            title="http://stream-ontology.com/matvoc-core/isObservedBy">is observed by</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/isRunOf" title="http://stream-ontology.com/matvoc-core/isRunOf">is run of</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/isSampleOf"
+            title="http://stream-ontology.com/matvoc-core/isSampleOf">is sample of</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/observes" title="http://stream-ontology.com/matvoc-core/observes">observes</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/restrictedBy"
+            title="http://stream-ontology.com/matvoc-core/restrictedBy">restricted by</a>
+      </li>
+      <li>
+         <a href="#matvoc-core/resultsIn" title="http://stream-ontology.com/matvoc-core/resultsIn">results in</a>
+      </li>
+   </ul>
+   <div class="entity" id="matvoc-core/defines">
+      <h3>defines<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/defines</p>
+      <div class="comment">
+         <span class="markdown">The defines property gives the observations defined by a run.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation">observation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/hasMetadata">
+      <h3>has metadata<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasMetadata</p>
+      <div class="comment">
+         <span class="markdown">The hasMetadata property allows a dataset (observation collection) to be explained by a DCAT metadata.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Dataset" title="http://stream-ontology.com/matvoc-core/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/dcat#Dataset"
+                  target="_blank"
+                  title="http://www.w3.org/ns/dcat#Dataset">dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/hasMethod">
+      <h3>has method<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasMethod</p>
+      <div class="comment">
+         <span class="markdown">The hasMethod property gives the method of an individual in the domain.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">measurement</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation">observation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Method" title="http://stream-ontology.com/matvoc-core/Method">Method</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/hasProtocol">
+      <h3>has protocol<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasProtocol</p>
+      <div class="comment">
+         <span class="markdown">The hasProtocol property gives the protocol of an individual in the domain.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">measurement</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation">observation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol">protocol</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/hasRun">
+      <h3>has run<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasRun</p>
+      <div class="comment">
+         <span class="markdown">The hasRun property gives the runs of a simulation.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Study" title="http://stream-ontology.com/matvoc-core/Study">Study</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#matvoc-core/isRunOf" title="http://stream-ontology.com/matvoc-core/isRunOf">is run of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/hasTag">
+      <h3>has tag<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasTag</p>
+      <div class="comment">
+         <span class="markdown">The hasTag property gives allows the measurements to have classification, grouping, or thematic tags.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement">measurement</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2004/02/skos/core#Concept"
+                  target="_blank"
+                  title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/isObservedBy">
+      <h3>is observed by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/isObservedBy</p>
+      <div class="comment">
+         <span class="markdown">The isObservedBy property gives the observer of a characteristic.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic">characteristic</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Observer" title="http://stream-ontology.com/matvoc-core/Observer">Observer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#matvoc-core/observes" title="http://stream-ontology.com/matvoc-core/observes">observes</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/isRunOf">
+      <h3>is run of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/isRunOf</p>
+      <div class="comment">
+         <span class="markdown">The isRunOf property gives the simulation of a run.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Study" title="http://stream-ontology.com/matvoc-core/Study">Study</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#matvoc-core/hasRun" title="http://stream-ontology.com/matvoc-core/hasRun">has run</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/isSampleOf">
+      <h3>is sample of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/isSampleOf</p>
+      <div class="comment">
+         <span class="markdown">The isSampleOf property indicated the feature of interest that the sample is taken from</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Sample" title="http://stream-ontology.com/matvoc-core/Sample">sample</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Entity" title="http://stream-ontology.com/matvoc-core/Entity">entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/observes">
+      <h3>observes<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/observes</p>
+      <div class="comment">
+         <span class="markdown">The observes property gives the characteristic that has been observed by an observer.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Observer" title="http://stream-ontology.com/matvoc-core/Observer">Observer</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic">characteristic</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#matvoc-core/isObservedBy"
+                  title="http://stream-ontology.com/matvoc-core/isObservedBy">is observed by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/restrictedBy">
+      <h3>restricted by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/restrictedBy</p>
+      <div class="comment">
+         <span class="markdown">The restrictedBy property gives the terms that are applied to a Run, an Obervation, or a Measurement.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement">measurement</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation">observation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Term" title="http://stream-ontology.com/matvoc-core/Term">Term</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/resultsIn">
+      <h3>results in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/resultsIn</p>
+      <div class="comment">
+         <span class="markdown">The resultsIn property gives the observation collection of a run.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#matvoc-core/Dataset" title="http://stream-ontology.com/matvoc-core/Dataset">Dataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#matvoc-core/finishedAt"
+            title="http://stream-ontology.com/matvoc-core/finishedAt">
+            <span>finished at</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/startedAt" title="http://stream-ontology.com/matvoc-core/startedAt">
+            <span>started at</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="matvoc-core/finishedAt">
+      <h3>finished at<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/finishedAt</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#matvoc-core/finishedAt">named individual</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="matvoc-core/startedAt">
+      <h3>started at<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/startedAt</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#matvoc-core/Run" title="http://stream-ontology.com/matvoc-core/Run">Run</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#matvoc-core/startedAt">named individual</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="annotationproperties">
+   <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+            <span>contributor</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+            <span>creator</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+            <span>description</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasRawValue"
+            title="http://stream-ontology.com/matvoc-core/hasRawValue">
+            <span>has raw value</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+            <span>license</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+            title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+            <span>preferred namespace prefix</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+            <span>preferred namespace uri</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/schemaVersion" title="http://schema.org/schemaVersion">
+            <span>schema version</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/ontology/bibo/status" title="http://purl.org/ontology/bibo/status">
+            <span>status</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+            <span>title</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://purl.org/dc/terms/contributor">
+      <h3>contributor<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+      <h3>creator<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+      <h3>description<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+   </div>
+   <div class="entity" id="matvoc-core/hasRawValue">
+      <h3>has raw value<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasRawValue</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue"
+                  target="_blank"
+                  title="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue">measured value</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#matvoc-core/hasRawValue">named individual</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/license">
+      <h3>license<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+   </div>
+   <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+      <h3>preferred namespace prefix<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+   </div>
+   <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+      <h3>preferred namespace uri<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+   </div>
+   <div class="entity" id="http://schema.org/schemaVersion">
+      <h3>schema version<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/schemaVersion</p>
+   </div>
+   <div class="entity" id="http://purl.org/ontology/bibo/status">
+      <h3>status<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/ontology/bibo/status</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+      <h3>title<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#matvoc-core/finishedAt"
+            title="http://stream-ontology.com/matvoc-core/finishedAt">
+            <span>finished at</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/hasRawValue"
+            title="http://stream-ontology.com/matvoc-core/hasRawValue">
+            <span>has raw value</span>
+         </a>
+      </li>
+      <li>
+         <a href="#matvoc-core/startedAt" title="http://stream-ontology.com/matvoc-core/startedAt">
+            <span>started at</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="matvoc-core/finishedAt">
+      <h3>finished at<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/finishedAt</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#DataTypeProperty"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#DataTypeProperty">data type property</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#matvoc-core/finishedAt">data property</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/hasRawValue">
+      <h3>has raw value<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/hasRawValue</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#DataTypeProperty"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#DataTypeProperty">data type property</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#matvoc-core/hasRawValue">annotation property</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="matvoc-core/startedAt">
+      <h3>started at<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://stream-ontology.com/matvoc-core/startedAt</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#DataTypeProperty"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#DataTypeProperty">data type property</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#matvoc-core/startedAt">data property</a>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

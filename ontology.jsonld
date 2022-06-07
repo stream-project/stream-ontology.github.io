@@ -1,0 +1,619 @@
+[ {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Entity"
+  } ]
+}, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Dataset"
+  } ]
+}, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Method"
+  } ]
+}, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/schemaVersion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Javad Chamanara"
+  }, {
+    "@value" : "Tatyana Sheveleva"
+  } ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@language" : "en",
+    "@value" : "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "en",
+    "@value" : "Materials Vocabulary: MatVoc-Core"
+  } ],
+  "http://purl.org/dc/terms/contributor" : [ {
+    "@id" : "https://aksw.org/KurtJunghanns"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@language" : "en",
+    "@value" : "MIT License"
+  } ],
+  "http://purl.org/ontology/bibo/status" : [ {
+    "@language" : "en",
+    "@value" : "Draft"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@language" : "en",
+    "@value" : "mvc"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "http://stream-ontology.com/"
+  } ],
+  "http://schema.org/schemaVersion" : [ {
+    "@value" : "1.0.0"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://stream-projekt.net"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Configuration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Configuration"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Configuration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Term"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Dataset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A set of related observations with their measurements and values, obtained by a single run."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dataset"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Dataset"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Entity class is an abstract entity which is being processed within an experiment or simulated."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Enumeration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A terminology, e.g., a closed list of vocabularies that can be used to limit the valid values of a measurement."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Enumeration"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Enumeration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Term"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Experiment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A single, unique, and identifiable experiment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Experiment"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Experiment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Study"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Formula",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "define formula's associated with the material."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Formula"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Formula"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Material",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Material class is a representative of a feature of interest on which an experiment or a simulation is made."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Entity"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Method",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The method of performing an experiment, observation, or measurement."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Method"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Method"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Observer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An agent that can observe an observation. It can be a human, device, sensor, or software."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Observer"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Observer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Agent"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Run",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Run"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Run"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Sample",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Sample is a class representing a subset of a material that is the object of an experiment or a simulation."
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Sample"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Simulation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A single, unique, and identifiable simulation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Simulation"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Simulation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Study"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Study",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An endeavor that adheres to scientific research design to obtain a result or an insight."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Study"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Study"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/Term",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A term or condition that applies to an observation or a run."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Term"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "Term"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/defines",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The defines property gives the observations defined by a run."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "defines"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "defines"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/finishedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The date and time when the ran is finished."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/hasMetadata",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The hasMetadata property allows a dataset (observation collection) to be explained by a DCAT metadata."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Dataset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has metadata"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "hasMetadata"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/dcat#Dataset"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/hasMethod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The hasMethod property gives the method of an individual in the domain."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"
+  }, {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+  }, {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has method"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "hasMethod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Method"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/hasProtocol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The hasProtocol property gives the protocol of an individual in the domain."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"
+  }, {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+  }, {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has protocol"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "hasProtocol"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/hasRawValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The hasRawValue property is the coded representation of the measured value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/hasRun",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The hasRun property gives the runs of a simulation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Study"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has run"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "hasRun"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/hasTag",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The hasTag property gives allows the measurements to have classification, grouping, or thematic tags."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has tag"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "hasTag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/isObservedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The isObservedBy property gives the observer of a characteristic."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is observed by"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "isObservedBy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Observer"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/observes"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/isRunOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The isRunOf property gives the simulation of a run."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is run of"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "isRunOf"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Study"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/hasRun"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/isSampleOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The isSampleOf property indicated the feature of interest that the sample is taken from"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Sample"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is sample of"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "isSampleOf"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Entity"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/observes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The observes property gives the characteristic that has been observed by an observer."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Observer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "observes"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "observes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/restrictedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The restrictedBy property gives the terms that are applied to a Run, an Obervation, or a Measurement."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement"
+  }, {
+    "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation"
+  }, {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "restricted by"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "restrictedBy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Term"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/resultsIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The resultsIn property gives the observation collection of a run."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "results in"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "resultsIn"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Dataset"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-core/startedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The date and time when the ran started."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Run"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://stream-ontology.com/matvoc-emmoItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://stream-ontology.com/matvoc-core/Entity"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#Dataset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/Sample",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

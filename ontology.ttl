@@ -1,0 +1,400 @@
+@prefix : <http://stream-ontology.com/matvoc-core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://stream-ontology.com/matvoc-core/> .
+
+<http://stream-ontology.com/matvoc-core/> rdf:type owl:Ontology ;
+                                           <http://purl.org/dc/elements/1.1/creator> "Javad Chamanara" ,
+                                                                                     "Tatyana Sheveleva" ;
+                                           <http://purl.org/dc/elements/1.1/description> "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en ;
+                                           <http://purl.org/dc/elements/1.1/title> "Materials Vocabulary: MatVoc-Core"@en ;
+                                           <http://purl.org/dc/terms/contributor> <https://aksw.org/KurtJunghanns> ;
+                                           <http://purl.org/dc/terms/license> "MIT License"@en ;
+                                           <http://purl.org/ontology/bibo/status> "Draft"@en ;
+                                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "mvc"@en ;
+                                           <http://purl.org/vocab/vann/preferredNamespaceUri> "http://stream-ontology.com/" ;
+                                           <http://schema.org/schemaVersion> "1.0.0" ;
+                                           rdfs:seeAlso <https://stream-projekt.net> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/schemaVersion
+<http://schema.org/schemaVersion> rdf:type owl:AnnotationProperty .
+
+
+###  http://stream-ontology.com/matvoc-core/hasRawValue
+:hasRawValue rdf:type owl:AnnotationProperty ;
+             rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://stream-ontology.com/matvoc-core/defines
+:defines rdf:type owl:ObjectProperty ;
+         rdfs:domain :Run ;
+         rdfs:range <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> ;
+         rdfs:comment "The defines property gives the observations defined by a run." ;
+         rdfs:label "defines"@en ,
+                    "defines"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/hasMetadata
+:hasMetadata rdf:type owl:ObjectProperty ;
+             rdfs:domain :Dataset ;
+             rdfs:range <http://www.w3.org/ns/dcat#Dataset> ;
+             rdfs:comment "The hasMetadata property allows a dataset (observation collection) to be explained by a DCAT metadata." ;
+             rdfs:label "has metadata"@en ,
+                        "hasMetadata"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/hasMethod
+:hasMethod rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> ,
+                       <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> ,
+                       :Run ;
+           rdfs:range :Method ;
+           rdfs:comment "The hasMethod property gives the method of an individual in the domain."@en ;
+           rdfs:label "has method"@en ,
+                      "hasMethod"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/hasProtocol
+:hasProtocol rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> ,
+                         <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> ,
+                         :Run ;
+             rdfs:range <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol> ;
+             rdfs:comment "The hasProtocol property gives the protocol of an individual in the domain."@en ;
+             rdfs:label "has protocol"@en ,
+                        "hasProtocol"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/hasRun
+:hasRun rdf:type owl:ObjectProperty ;
+        rdfs:domain :Study ;
+        rdfs:range :Run ;
+        rdfs:comment "The hasRun property gives the runs of a simulation."@en ;
+        rdfs:label "has run"@en ,
+                   "hasRun"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/hasTag
+:hasTag rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement> ;
+        rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+        rdfs:comment "The hasTag property gives allows the measurements to have classification, grouping, or thematic tags." ;
+        rdfs:label "has tag"@en ,
+                   "hasTag"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/isObservedBy
+:isObservedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :observes ;
+              rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic> ;
+              rdfs:range :Observer ;
+              rdfs:comment "The isObservedBy property gives the observer of a characteristic." ;
+              rdfs:label "is observed by"@en ,
+                         "isObservedBy"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/isRunOf
+:isRunOf rdf:type owl:ObjectProperty ;
+         owl:inverseOf :hasRun ;
+         rdfs:domain :Run ;
+         rdfs:range :Study ;
+         rdfs:comment "The isRunOf property gives the simulation of a run."@en ;
+         rdfs:label "is run of"@en ,
+                    "isRunOf"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/isSampleOf
+:isSampleOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Sample ;
+            rdfs:range :Entity ;
+            rdfs:comment "The isSampleOf property indicated the feature of interest that the sample is taken from" ;
+            rdfs:label "is sample of"@en ,
+                       "isSampleOf"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/observes
+:observes rdf:type owl:ObjectProperty ;
+          rdfs:domain :Observer ;
+          rdfs:range <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic> ;
+          rdfs:comment "The observes property gives the characteristic that has been observed by an observer." ;
+          rdfs:label "observes"@en ,
+                     "observes"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/restrictedBy
+:restrictedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> ,
+                          <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> ,
+                          :Run ;
+              rdfs:range :Term ;
+              rdfs:comment "The restrictedBy property gives the terms that are applied to a Run, an Obervation, or a Measurement." ;
+              rdfs:label "restricted by"@en ,
+                         "restrictedBy"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/resultsIn
+:resultsIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Run ;
+           rdfs:range :Dataset ;
+           rdfs:comment "The resultsIn property gives the observation collection of a run." ;
+           rdfs:label "results in"@en ,
+                      "resultsIn"@iri-based .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://stream-ontology.com/matvoc-core/finishedAt
+:finishedAt rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Run ;
+            rdfs:range xsd:dateTime .
+
+
+###  http://stream-ontology.com/matvoc-core/startedAt
+:startedAt rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Run ;
+           rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic> rdf:type owl:Class .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity> rdf:type owl:Class ;
+                                                               owl:equivalentClass :Entity .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> rdf:type owl:Class .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> rdf:type owl:Class .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection> rdf:type owl:Class ;
+                                                                              owl:equivalentClass :Dataset .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol> rdf:type owl:Class ;
+                                                                 owl:equivalentClass :Method .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement> rdf:type owl:Class .
+
+
+###  http://stream-ontology.com/matvoc-emmoItem
+<http://stream-ontology.com/matvoc-emmoItem> rdf:type owl:Class ;
+                                             owl:equivalentClass :Entity .
+
+
+###  http://stream-ontology.com/matvoc-core/Configuration
+:Configuration rdf:type owl:Class ;
+               rdfs:subClassOf :Term ;
+               rdfs:comment "A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation."@en ;
+               rdfs:label "Configuration"@en ,
+                          "Configuration"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:comment "A set of related observations with their measurements and values, obtained by a single run."@en ;
+         rdfs:label "Dataset"@en ,
+                    "Dataset"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Entity
+:Entity rdf:type owl:Class ;
+        owl:equivalentClass <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+        rdfs:comment "Entity class is an abstract entity which is being processed within an experiment or simulated."@en .
+
+
+###  http://stream-ontology.com/matvoc-core/Enumeration
+:Enumeration rdf:type owl:Class ;
+             owl:equivalentClass <http://www.w3.org/2004/02/skos/core#Concept> ;
+             rdfs:subClassOf :Term ;
+             rdfs:comment "A terminology, e.g., a closed list of vocabularies that can be used to limit the valid values of a measurement."@en ;
+             rdfs:label "Enumeration"@en ,
+                        "Enumeration"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Experiment
+:Experiment rdf:type owl:Class ;
+            rdfs:subClassOf :Study ;
+            rdfs:comment "A single, unique, and identifiable experiment."@en ;
+            rdfs:label "Experiment"@en ,
+                       "Experiment"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Formula
+:Formula rdf:type owl:Class ;
+         rdfs:comment "define formula's associated with the material."@en ;
+         rdfs:label "Formula"@en ,
+                    "Formula"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Material
+:Material rdf:type owl:Class ;
+          rdfs:subClassOf :Entity ;
+          rdfs:comment "Material class is a representative of a feature of interest on which an experiment or a simulation is made."@en .
+
+
+###  http://stream-ontology.com/matvoc-core/Method
+:Method rdf:type owl:Class ;
+        rdfs:comment "The method of performing an experiment, observation, or measurement."@en ;
+        rdfs:label "Method"@en ,
+                   "Method"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Observer
+:Observer rdf:type owl:Class ;
+          rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+          rdfs:comment "An agent that can observe an observation. It can be a human, device, sensor, or software."@en ;
+          rdfs:label "Observer"@en ,
+                     "Observer"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Run
+:Run rdf:type owl:Class ;
+     rdfs:comment "A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings."@en ;
+     rdfs:label "Run"@en ,
+                "Run"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Sample
+:Sample rdf:type owl:Class ;
+        owl:equivalentClass <http://www.w3.org/ns/sosa/Sample> ;
+        rdfs:comment "Sample is a class representing a subset of a material that is the object of an experiment or a simulation."@en .
+
+
+###  http://stream-ontology.com/matvoc-core/Simulation
+:Simulation rdf:type owl:Class ;
+            rdfs:subClassOf :Study ;
+            rdfs:comment "A single, unique, and identifiable simulation."@en ;
+            rdfs:label "Simulation"@en ,
+                       "Simulation"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Study
+:Study rdf:type owl:Class ;
+       rdfs:comment "An endeavor that adheres to scientific research design to obtain a result or an insight."@en ;
+       rdfs:label "Study"@en ,
+                  "Study"@iri-based .
+
+
+###  http://stream-ontology.com/matvoc-core/Term
+:Term rdf:type owl:Class ;
+      rdfs:comment "A term or condition that applies to an observation or a run."@en ;
+      rdfs:label "Term"@en ,
+                 "Term"@iri-based .
+
+
+###  http://www.w3.org/2002/07/owl#DataTypeProperty
+owl:DataTypeProperty rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/dcat#Dataset
+<http://www.w3.org/ns/dcat#Dataset> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sample
+<http://www.w3.org/ns/sosa/Sample> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://stream-ontology.com/matvoc-core/finishedAt
+:finishedAt rdf:type owl:NamedIndividual ,
+                     owl:DataTypeProperty .
+
+
+###  http://stream-ontology.com/matvoc-core/hasRawValue
+:hasRawValue rdf:type owl:NamedIndividual ,
+                      owl:DataTypeProperty .
+
+
+###  http://stream-ontology.com/matvoc-core/startedAt
+:startedAt rdf:type owl:NamedIndividual ,
+                    owl:DataTypeProperty .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:finishedAt rdfs:comment "The date and time when the ran is finished."@en .
+
+
+:hasRawValue rdfs:comment "The hasRawValue property is the coded representation of the measured value."@en .
+
+
+:startedAt rdfs:comment "The date and time when the ran started."@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

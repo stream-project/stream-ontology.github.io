@@ -1,0 +1,857 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "iri-based", "en", "undefined" ],
+    "baseIris" : [ "http://stream-ontology.com/matvoc-core", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl", "http://www.w3.org/ns/sosa", "http://www.w3.org/ns/dcat", "http://xmlns.com/foaf/0.1", "http://stream-ontology.com", "http://www.w3.org/2004/02/skos/core" ],
+    "title" : {
+      "en" : "Materials Vocabulary: MatVoc-Core"
+    },
+    "iri" : "http://stream-ontology.com/matvoc-core/",
+    "author" : [ "Tatyana Sheveleva", "Javad Chamanara" ],
+    "description" : {
+      "en" : "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "en",
+        "value" : "MIT License",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Javad Chamanara",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Tatyana Sheveleva",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "https://aksw.org/KurtJunghanns",
+        "type" : "iri"
+      } ],
+      "schemaVersion" : [ {
+        "identifier" : "schemaVersion",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "en",
+        "value" : "mvc",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "http://stream-ontology.com/",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Materials Vocabulary: MatVoc-Core",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "https://stream-projekt.net",
+        "type" : "iri"
+      } ],
+      "status" : [ {
+        "identifier" : "status",
+        "language" : "en",
+        "value" : "Draft",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "8",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "31",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "44",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Agent",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent"
+    },
+    "subClasses" : [ "2" ],
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ObservationCollection"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Observer",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Observer",
+      "iri-based" : "Observer",
+      "en" : "Observer"
+    },
+    "comment" : {
+      "en" : "An agent that can observe an observation. It can be a human, device, sensor, or software."
+    },
+    "id" : "2",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Characteristic"
+    },
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Experiment",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Experiment",
+      "iri-based" : "Experiment",
+      "en" : "Experiment"
+    },
+    "comment" : {
+      "en" : "A single, unique, and identifiable experiment."
+    },
+    "id" : "10",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Term",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Term",
+      "iri-based" : "Term",
+      "en" : "Term"
+    },
+    "subClasses" : [ "14", "15" ],
+    "comment" : {
+      "en" : "A term or condition that applies to an observation or a run."
+    },
+    "id" : "13"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Method",
+    "equivalent" : [ "17" ],
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Method",
+      "iri-based" : "Method",
+      "en" : "Method"
+    },
+    "comment" : {
+      "en" : "The method of performing an experiment, observation, or measurement."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Measurement"
+    },
+    "attributes" : [ "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "measurement"
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Entity",
+    "equivalent" : [ "30", "31", "3" ],
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "subClasses" : [ "29" ],
+    "comment" : {
+      "en" : "Entity class is an abstract entity which is being processed within an experiment or simulated."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Configuration",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Configuration",
+      "iri-based" : "Configuration",
+      "en" : "Configuration"
+    },
+    "comment" : {
+      "en" : "A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation."
+    },
+    "id" : "15",
+    "superClasses" : [ "13" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "26", "5", "24" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#DataTypeProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataTypeProperty"
+    },
+    "individuals" : [ {
+      "iri" : "http://stream-ontology.com/matvoc-core/hasRawValue",
+      "baseIri" : "http://stream-ontology.com/matvoc-core",
+      "comment" : {
+        "en" : "The hasRawValue property is the coded representation of the measured value."
+      },
+      "labels" : {
+        "IRI-based" : "hasRawValue"
+      }
+    }, {
+      "iri" : "http://stream-ontology.com/matvoc-core/finishedAt",
+      "baseIri" : "http://stream-ontology.com/matvoc-core",
+      "comment" : {
+        "en" : "The date and time when the ran is finished."
+      },
+      "labels" : {
+        "IRI-based" : "finishedAt"
+      }
+    }, {
+      "iri" : "http://stream-ontology.com/matvoc-core/startedAt",
+      "baseIri" : "http://stream-ontology.com/matvoc-core",
+      "comment" : {
+        "en" : "The date and time when the ran started."
+      },
+      "labels" : {
+        "IRI-based" : "startedAt"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "32"
+  }, {
+    "instances" : 0,
+    "union" : [ "26", "5", "24" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "33"
+  }, {
+    "instances" : 0,
+    "union" : [ "26", "5", "24" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-emmoItem",
+    "baseIri" : "http://stream-ontology.com",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "matvoc-emmoItem"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Protocol"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://www.w3.org/ns/sosa/FeatureOfInterest",
+    "baseIri" : "http://www.w3.org/ns/sosa",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FeatureOfInterest"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Formula",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Formula",
+      "iri-based" : "Formula",
+      "en" : "Formula"
+    },
+    "comment" : {
+      "en" : "define formula's associated with the material."
+    },
+    "id" : "48"
+  }, {
+    "iri" : "http://www.w3.org/ns/sosa/Sample",
+    "baseIri" : "http://www.w3.org/ns/sosa",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Sample"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "49"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Study",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Study",
+      "iri-based" : "Study",
+      "en" : "Study"
+    },
+    "subClasses" : [ "10", "23" ],
+    "comment" : {
+      "en" : "An endeavor that adheres to scientific research design to obtain a result or an insight."
+    },
+    "id" : "6"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Enumeration",
+    "equivalent" : [ "0" ],
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Enumeration",
+      "iri-based" : "Enumeration",
+      "en" : "Enumeration"
+    },
+    "comment" : {
+      "en" : "A terminology, e.g., a closed list of vocabularies that can be used to limit the valid values of a measurement."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "14",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Sample",
+    "equivalent" : [ "49" ],
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Sample"
+    },
+    "comment" : {
+      "en" : "Sample is a class representing a subset of a material that is the object of an experiment or a simulation."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "44"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Material",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Material"
+    },
+    "comment" : {
+      "en" : "Material class is a representative of a feature of interest on which an experiment or a simulation is made."
+    },
+    "id" : "29",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Dataset",
+    "equivalent" : [ "8" ],
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset",
+      "iri-based" : "Dataset",
+      "en" : "Dataset"
+    },
+    "comment" : {
+      "en" : "A set of related observations with their measurements and values, obtained by a single run."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Run",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Run",
+      "iri-based" : "Run",
+      "en" : "Run"
+    },
+    "comment" : {
+      "en" : "A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings."
+    },
+    "id" : "5"
+  }, {
+    "iri" : "http://www.w3.org/ns/dcat#Dataset",
+    "baseIri" : "http://www.w3.org/ns/dcat",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dataset"
+    },
+    "attributes" : [ "external" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/Simulation",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Simulation",
+      "iri-based" : "Simulation",
+      "en" : "Simulation"
+    },
+    "comment" : {
+      "en" : "A single, unique, and identifiable simulation."
+    },
+    "id" : "23",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation",
+    "baseIri" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Observation"
+    },
+    "attributes" : [ "external" ],
+    "id" : "26"
+  } ],
+  "property" : [ {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://stream-ontology.com/matvoc-core/isRunOf",
+    "inverse" : "7",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "isRunOf",
+      "iri-based" : "isRunOf",
+      "en" : "is run of"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The isRunOf property gives the simulation of a run."
+    },
+    "attributes" : [ "object" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/isObservedBy",
+    "inverse" : "12",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isObservedBy",
+      "iri-based" : "isObservedBy",
+      "en" : "is observed by"
+    },
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "The isObservedBy property gives the observer of a characteristic."
+    },
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/hasMethod",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasMethod",
+      "iri-based" : "hasMethod",
+      "en" : "has method"
+    },
+    "domain" : "19",
+    "comment" : {
+      "en" : "The hasMethod property gives the method of an individual in the domain."
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/resultsIn",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "resultsIn",
+      "iri-based" : "resultsIn",
+      "en" : "results in"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "The resultsIn property gives the observation collection of a run."
+    },
+    "attributes" : [ "object" ],
+    "id" : "20"
+  }, {
+    "range" : "6",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/defines",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "defines",
+      "iri-based" : "defines",
+      "en" : "defines"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "The defines property gives the observations defined by a run."
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "range" : "1",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "35"
+  }, {
+    "range" : "13",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "range" : "13",
+    "domain" : "15",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/startedAt",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "startedAt"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The date and time when the ran started."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/hasProtocol",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "hasProtocol",
+      "iri-based" : "hasProtocol",
+      "en" : "has protocol"
+    },
+    "domain" : "33",
+    "comment" : {
+      "en" : "The hasProtocol property gives the protocol of an individual in the domain."
+    },
+    "attributes" : [ "object" ],
+    "id" : "40"
+  }, {
+    "range" : "28",
+    "domain" : "29",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "41"
+  }, {
+    "range" : "6",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/observes",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "observes",
+      "iri-based" : "observes",
+      "en" : "observes"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "The observes property gives the characteristic that has been observed by an observer."
+    },
+    "attributes" : [ "object" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/isSampleOf",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "isSampleOf",
+      "iri-based" : "isSampleOf",
+      "en" : "is sample of"
+    },
+    "domain" : "44",
+    "comment" : {
+      "undefined" : "The isSampleOf property indicated the feature of interest that the sample is taken from"
+    },
+    "attributes" : [ "object" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/hasRun",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasRun",
+      "iri-based" : "hasRun",
+      "en" : "has run"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The hasRun property gives the runs of a simulation."
+    },
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/hasTag",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "hasTag",
+      "iri-based" : "hasTag",
+      "en" : "has tag"
+    },
+    "domain" : "27",
+    "comment" : {
+      "undefined" : "The hasTag property gives allows the measurements to have classification, grouping, or thematic tags."
+    },
+    "attributes" : [ "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/restrictedBy",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "restrictedBy",
+      "iri-based" : "restrictedBy",
+      "en" : "restricted by"
+    },
+    "domain" : "34",
+    "comment" : {
+      "undefined" : "The restrictedBy property gives the terms that are applied to a Run, an Obervation, or a Measurement."
+    },
+    "attributes" : [ "object" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/hasMetadata",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "hasMetadata",
+      "iri-based" : "hasMetadata",
+      "en" : "has metadata"
+    },
+    "domain" : "21",
+    "comment" : {
+      "undefined" : "The hasMetadata property allows a dataset (observation collection) to be explained by a DCAT metadata."
+    },
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://stream-ontology.com/matvoc-core/finishedAt",
+    "baseIri" : "http://stream-ontology.com/matvoc-core",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "finishedAt"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The date and time when the ran is finished."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "52"
+  } ]
+}

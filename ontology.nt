@@ -1,0 +1,363 @@
+<http://stream-ontology.com/matvoc-core/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/elements/1.1/creator> "Javad Chamanara" .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/elements/1.1/creator> "Tatyana Sheveleva" .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/elements/1.1/description> "The Materials RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language to satisfy the requirements of the STREAM project."@en .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/elements/1.1/title> "Materials Vocabulary: MatVoc-Core"@en .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/terms/contributor> <https://aksw.org/KurtJunghanns> .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/terms/license> "MIT License"@en .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/ontology/bibo/status> "Draft"@en .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "mvc"@en .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://stream-ontology.com/" .
+<http://stream-ontology.com/matvoc-core/> <http://schema.org/schemaVersion> "1.0.0" .
+<http://stream-ontology.com/matvoc-core/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://stream-projekt.net> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/schemaVersion
+<http://schema.org/schemaVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://stream-ontology.com/matvoc-core/hasRawValue
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://stream-ontology.com/matvoc-core/defines
+<http://stream-ontology.com/matvoc-core/defines> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/defines> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/defines> <http://www.w3.org/2000/01/rdf-schema#range> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/defines> <http://www.w3.org/2000/01/rdf-schema#comment> "The defines property gives the observations defined by a run." .
+<http://stream-ontology.com/matvoc-core/defines> <http://www.w3.org/2000/01/rdf-schema#label> "defines"@en .
+<http://stream-ontology.com/matvoc-core/defines> <http://www.w3.org/2000/01/rdf-schema#label> "defines"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/hasMetadata
+<http://stream-ontology.com/matvoc-core/hasMetadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/hasMetadata> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Dataset> .
+<http://stream-ontology.com/matvoc-core/hasMetadata> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/dcat#Dataset> .
+<http://www.w3.org/ns/dcat#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/hasMetadata> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasMetadata property allows a dataset (observation collection) to be explained by a DCAT metadata." .
+<http://stream-ontology.com/matvoc-core/hasMetadata> <http://www.w3.org/2000/01/rdf-schema#label> "has metadata"@en .
+<http://stream-ontology.com/matvoc-core/hasMetadata> <http://www.w3.org/2000/01/rdf-schema#label> "hasMetadata"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/hasMethod
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Method> .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasMethod property gives the method of an individual in the domain."@en .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#label> "has method"@en .
+<http://stream-ontology.com/matvoc-core/hasMethod> <http://www.w3.org/2000/01/rdf-schema#label> "hasMethod"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/hasProtocol
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#range> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasProtocol property gives the protocol of an individual in the domain."@en .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "has protocol"@en .
+<http://stream-ontology.com/matvoc-core/hasProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "hasProtocol"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/hasRun
+<http://stream-ontology.com/matvoc-core/hasRun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/hasRun> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Study> .
+<http://stream-ontology.com/matvoc-core/hasRun> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/hasRun> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasRun property gives the runs of a simulation."@en .
+<http://stream-ontology.com/matvoc-core/hasRun> <http://www.w3.org/2000/01/rdf-schema#label> "has run"@en .
+<http://stream-ontology.com/matvoc-core/hasRun> <http://www.w3.org/2000/01/rdf-schema#label> "hasRun"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/hasTag
+<http://stream-ontology.com/matvoc-core/hasTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/hasTag> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/hasTag> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/hasTag> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasTag property gives allows the measurements to have classification, grouping, or thematic tags." .
+<http://stream-ontology.com/matvoc-core/hasTag> <http://www.w3.org/2000/01/rdf-schema#label> "has tag"@en .
+<http://stream-ontology.com/matvoc-core/hasTag> <http://www.w3.org/2000/01/rdf-schema#label> "hasTag"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/isObservedBy
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://stream-ontology.com/matvoc-core/observes> .
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Observer> .
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The isObservedBy property gives the observer of a characteristic." .
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is observed by"@en .
+<http://stream-ontology.com/matvoc-core/isObservedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isObservedBy"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/isRunOf
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://stream-ontology.com/matvoc-core/hasRun> .
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Study> .
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/2000/01/rdf-schema#comment> "The isRunOf property gives the simulation of a run."@en .
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/2000/01/rdf-schema#label> "is run of"@en .
+<http://stream-ontology.com/matvoc-core/isRunOf> <http://www.w3.org/2000/01/rdf-schema#label> "isRunOf"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/isSampleOf
+<http://stream-ontology.com/matvoc-core/isSampleOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Sample> .
+<http://stream-ontology.com/matvoc-core/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Entity> .
+<http://stream-ontology.com/matvoc-core/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#comment> "The isSampleOf property indicated the feature of interest that the sample is taken from" .
+<http://stream-ontology.com/matvoc-core/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#label> "is sample of"@en .
+<http://stream-ontology.com/matvoc-core/isSampleOf> <http://www.w3.org/2000/01/rdf-schema#label> "isSampleOf"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/observes
+<http://stream-ontology.com/matvoc-core/observes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/observes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Observer> .
+<http://stream-ontology.com/matvoc-core/observes> <http://www.w3.org/2000/01/rdf-schema#range> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic> .
+<http://stream-ontology.com/matvoc-core/observes> <http://www.w3.org/2000/01/rdf-schema#comment> "The observes property gives the characteristic that has been observed by an observer." .
+<http://stream-ontology.com/matvoc-core/observes> <http://www.w3.org/2000/01/rdf-schema#label> "observes"@en .
+<http://stream-ontology.com/matvoc-core/observes> <http://www.w3.org/2000/01/rdf-schema#label> "observes"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/restrictedBy
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement> .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation> .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Term> .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The restrictedBy property gives the terms that are applied to a Run, an Obervation, or a Measurement." .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#label> "restricted by"@en .
+<http://stream-ontology.com/matvoc-core/restrictedBy> <http://www.w3.org/2000/01/rdf-schema#label> "restrictedBy"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/resultsIn
+<http://stream-ontology.com/matvoc-core/resultsIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://stream-ontology.com/matvoc-core/resultsIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/resultsIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://stream-ontology.com/matvoc-core/Dataset> .
+<http://stream-ontology.com/matvoc-core/resultsIn> <http://www.w3.org/2000/01/rdf-schema#comment> "The resultsIn property gives the observation collection of a run." .
+<http://stream-ontology.com/matvoc-core/resultsIn> <http://www.w3.org/2000/01/rdf-schema#label> "results in"@en .
+<http://stream-ontology.com/matvoc-core/resultsIn> <http://www.w3.org/2000/01/rdf-schema#label> "resultsIn"@iri-based .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://stream-ontology.com/matvoc-core/finishedAt
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://stream-ontology.com/matvoc-core/startedAt
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Characteristic
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://stream-ontology.com/matvoc-core/Entity> .
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Observation
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#ObservationCollection> <http://www.w3.org/2002/07/owl#equivalentClass> <http://stream-ontology.com/matvoc-core/Dataset> .
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Protocol> <http://www.w3.org/2002/07/owl#equivalentClass> <http://stream-ontology.com/matvoc-core/Method> .
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#measurement
+# 
+# http://stream-ontology.com/matvoc-emmoItem
+<http://stream-ontology.com/matvoc-emmoItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-emmoItem> <http://www.w3.org/2002/07/owl#equivalentClass> <http://stream-ontology.com/matvoc-core/Entity> .
+# 
+# http://stream-ontology.com/matvoc-core/Configuration
+<http://stream-ontology.com/matvoc-core/Configuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Configuration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://stream-ontology.com/matvoc-core/Term> .
+<http://stream-ontology.com/matvoc-core/Configuration> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific setting or arrangement of the observers, entities, and/or charcteristics. This can be e.g., an atom topology in a smulation."@en .
+<http://stream-ontology.com/matvoc-core/Configuration> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration"@en .
+<http://stream-ontology.com/matvoc-core/Configuration> <http://www.w3.org/2000/01/rdf-schema#label> "Configuration"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Dataset
+<http://stream-ontology.com/matvoc-core/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of related observations with their measurements and values, obtained by a single run."@en .
+<http://stream-ontology.com/matvoc-core/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset"@en .
+<http://stream-ontology.com/matvoc-core/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Entity
+<http://stream-ontology.com/matvoc-core/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Entity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Entity class is an abstract entity which is being processed within an experiment or simulated."@en .
+# 
+# http://stream-ontology.com/matvoc-core/Enumeration
+<http://stream-ontology.com/matvoc-core/Enumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Enumeration> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://stream-ontology.com/matvoc-core/Enumeration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://stream-ontology.com/matvoc-core/Term> .
+<http://stream-ontology.com/matvoc-core/Enumeration> <http://www.w3.org/2000/01/rdf-schema#comment> "A terminology, e.g., a closed list of vocabularies that can be used to limit the valid values of a measurement."@en .
+<http://stream-ontology.com/matvoc-core/Enumeration> <http://www.w3.org/2000/01/rdf-schema#label> "Enumeration"@en .
+<http://stream-ontology.com/matvoc-core/Enumeration> <http://www.w3.org/2000/01/rdf-schema#label> "Enumeration"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Experiment
+<http://stream-ontology.com/matvoc-core/Experiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Experiment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://stream-ontology.com/matvoc-core/Study> .
+<http://stream-ontology.com/matvoc-core/Experiment> <http://www.w3.org/2000/01/rdf-schema#comment> "A single, unique, and identifiable experiment."@en .
+<http://stream-ontology.com/matvoc-core/Experiment> <http://www.w3.org/2000/01/rdf-schema#label> "Experiment"@en .
+<http://stream-ontology.com/matvoc-core/Experiment> <http://www.w3.org/2000/01/rdf-schema#label> "Experiment"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Formula
+<http://stream-ontology.com/matvoc-core/Formula> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Formula> <http://www.w3.org/2000/01/rdf-schema#comment> "define formula's associated with the material."@en .
+<http://stream-ontology.com/matvoc-core/Formula> <http://www.w3.org/2000/01/rdf-schema#label> "Formula"@en .
+<http://stream-ontology.com/matvoc-core/Formula> <http://www.w3.org/2000/01/rdf-schema#label> "Formula"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Material
+<http://stream-ontology.com/matvoc-core/Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Material> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://stream-ontology.com/matvoc-core/Entity> .
+<http://stream-ontology.com/matvoc-core/Material> <http://www.w3.org/2000/01/rdf-schema#comment> "Material class is a representative of a feature of interest on which an experiment or a simulation is made."@en .
+# 
+# http://stream-ontology.com/matvoc-core/Method
+<http://stream-ontology.com/matvoc-core/Method> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Method> <http://www.w3.org/2000/01/rdf-schema#comment> "The method of performing an experiment, observation, or measurement."@en .
+<http://stream-ontology.com/matvoc-core/Method> <http://www.w3.org/2000/01/rdf-schema#label> "Method"@en .
+<http://stream-ontology.com/matvoc-core/Method> <http://www.w3.org/2000/01/rdf-schema#label> "Method"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Observer
+<http://stream-ontology.com/matvoc-core/Observer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Observer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Observer> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent that can observe an observation. It can be a human, device, sensor, or software."@en .
+<http://stream-ontology.com/matvoc-core/Observer> <http://www.w3.org/2000/01/rdf-schema#label> "Observer"@en .
+<http://stream-ontology.com/matvoc-core/Observer> <http://www.w3.org/2000/01/rdf-schema#label> "Observer"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Run
+<http://stream-ontology.com/matvoc-core/Run> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Run> <http://www.w3.org/2000/01/rdf-schema#comment> "A single, unique, and identifiable execution of an experiment or simulation under defined terms and settings."@en .
+<http://stream-ontology.com/matvoc-core/Run> <http://www.w3.org/2000/01/rdf-schema#label> "Run"@en .
+<http://stream-ontology.com/matvoc-core/Run> <http://www.w3.org/2000/01/rdf-schema#label> "Run"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Sample
+<http://stream-ontology.com/matvoc-core/Sample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Sample> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/ns/sosa/Sample> .
+<http://www.w3.org/ns/sosa/Sample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Sample> <http://www.w3.org/2000/01/rdf-schema#comment> "Sample is a class representing a subset of a material that is the object of an experiment or a simulation."@en .
+# 
+# http://stream-ontology.com/matvoc-core/Simulation
+<http://stream-ontology.com/matvoc-core/Simulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Simulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://stream-ontology.com/matvoc-core/Study> .
+<http://stream-ontology.com/matvoc-core/Simulation> <http://www.w3.org/2000/01/rdf-schema#comment> "A single, unique, and identifiable simulation."@en .
+<http://stream-ontology.com/matvoc-core/Simulation> <http://www.w3.org/2000/01/rdf-schema#label> "Simulation"@en .
+<http://stream-ontology.com/matvoc-core/Simulation> <http://www.w3.org/2000/01/rdf-schema#label> "Simulation"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Study
+<http://stream-ontology.com/matvoc-core/Study> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Study> <http://www.w3.org/2000/01/rdf-schema#comment> "An endeavor that adheres to scientific research design to obtain a result or an insight."@en .
+<http://stream-ontology.com/matvoc-core/Study> <http://www.w3.org/2000/01/rdf-schema#label> "Study"@en .
+<http://stream-ontology.com/matvoc-core/Study> <http://www.w3.org/2000/01/rdf-schema#label> "Study"@iri-based .
+# 
+# http://stream-ontology.com/matvoc-core/Term
+<http://stream-ontology.com/matvoc-core/Term> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/Term> <http://www.w3.org/2000/01/rdf-schema#comment> "A term or condition that applies to an observation or a run."@en .
+<http://stream-ontology.com/matvoc-core/Term> <http://www.w3.org/2000/01/rdf-schema#label> "Term"@en .
+<http://stream-ontology.com/matvoc-core/Term> <http://www.w3.org/2000/01/rdf-schema#label> "Term"@iri-based .
+# 
+# http://www.w3.org/2002/07/owl#DataTypeProperty
+<http://www.w3.org/2002/07/owl#DataTypeProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+# 
+# http://www.w3.org/ns/dcat#Dataset
+# 
+# http://www.w3.org/ns/sosa/FeatureOfInterest
+# 
+# http://www.w3.org/ns/sosa/Sample
+# 
+# http://xmlns.com/foaf/0.1/Agent
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://stream-ontology.com/matvoc-core/finishedAt
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataTypeProperty> .
+# 
+# http://stream-ontology.com/matvoc-core/hasRawValue
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataTypeProperty> .
+# 
+# http://stream-ontology.com/matvoc-core/startedAt
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataTypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time when the ran is finished."@en .
+# 
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasRawValue property is the coded representation of the measured value."@en .
+# 
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time when the ran started."@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
