@@ -8,6 +8,9 @@
     "@id" : "http://stream-ontology.com/matvoc-core/Entity"
   } ]
 }, {
+  "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
@@ -44,6 +47,9 @@
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/ontology/bibo/status",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -78,9 +84,12 @@
     "@language" : "en",
     "@value" : "MIT License"
   } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2022-12-12"
+  } ],
   "http://purl.org/ontology/bibo/status" : [ {
     "@language" : "en",
-    "@value" : "Draft"
+    "@value" : "STREAM project result, founding tag: 16QK11"
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@language" : "en",
@@ -94,6 +103,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@id" : "https://stream-projekt.net"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0.0"
   } ]
 }, {
   "@id" : "http://stream-ontology.com/matvoc-core/Configuration",
@@ -318,10 +330,7 @@
   } ]
 }, {
   "@id" : "http://stream-ontology.com/matvoc-core/finishedAt",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The date and time when the ran is finished."
@@ -401,10 +410,7 @@
   } ]
 }, {
   "@id" : "http://stream-ontology.com/matvoc-core/hasRawValue",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The hasRawValue property is the coded representation of the measured value."
@@ -578,10 +584,7 @@
   } ]
 }, {
   "@id" : "http://stream-ontology.com/matvoc-core/startedAt",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The date and time when the ran started."
@@ -598,9 +601,6 @@
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "http://stream-ontology.com/matvoc-core/Entity"
   } ]
-}, {
-  "@id" : "http://www.w3.org/2002/07/owl#DataTypeProperty",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]

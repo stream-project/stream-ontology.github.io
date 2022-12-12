@@ -5,11 +5,13 @@
 <http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/elements/1.1/title> "Materials Vocabulary: MatVoc-Core"@en .
 <http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/terms/contributor> <https://aksw.org/KurtJunghanns> .
 <http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/terms/license> "MIT License"@en .
-<http://stream-ontology.com/matvoc-core/> <http://purl.org/ontology/bibo/status> "Draft"@en .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/dc/terms/modified> "2022-12-12" .
+<http://stream-ontology.com/matvoc-core/> <http://purl.org/ontology/bibo/status> "STREAM project result, founding tag: 16QK11"@en .
 <http://stream-ontology.com/matvoc-core/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "mvc"@en .
 <http://stream-ontology.com/matvoc-core/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://stream-ontology.com/" .
 <http://stream-ontology.com/matvoc-core/> <http://schema.org/schemaVersion> "1.0.0" .
 <http://stream-ontology.com/matvoc-core/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://stream-projekt.net> .
+<http://stream-ontology.com/matvoc-core/> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
 # 
 # 
 # #################################################################
@@ -34,6 +36,9 @@
 # http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://purl.org/ontology/bibo/status
 <http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -45,10 +50,6 @@
 # 
 # http://schema.org/schemaVersion
 <http://schema.org/schemaVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://stream-ontology.com/matvoc-core/hasRawValue
-<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> .
 # 
 # 
 # 
@@ -183,11 +184,19 @@
 <http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
 <http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time when the ran is finished."@en .
+# 
+# http://stream-ontology.com/matvoc-core/hasRawValue
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> .
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasRawValue property is the coded representation of the measured value."@en .
 # 
 # http://stream-ontology.com/matvoc-core/startedAt
 <http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://stream-ontology.com/matvoc-core/Run> .
 <http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time when the ran started."@en .
 # 
 # 
 # 
@@ -203,6 +212,8 @@
 # http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity
 <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://stream-ontology.com/matvoc-core/Entity> .
+# 
+# http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue
 # 
 # http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement
 # 
@@ -311,9 +322,6 @@
 <http://stream-ontology.com/matvoc-core/Term> <http://www.w3.org/2000/01/rdf-schema#label> "Term"@en .
 <http://stream-ontology.com/matvoc-core/Term> <http://www.w3.org/2000/01/rdf-schema#label> "Term"@iri-based .
 # 
-# http://www.w3.org/2002/07/owl#DataTypeProperty
-<http://www.w3.org/2002/07/owl#DataTypeProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # http://www.w3.org/2004/02/skos/core#Concept
 # 
 # http://www.w3.org/ns/dcat#Dataset
@@ -323,41 +331,5 @@
 # http://www.w3.org/ns/sosa/Sample
 # 
 # http://xmlns.com/foaf/0.1/Agent
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://stream-ontology.com/matvoc-core/finishedAt
-<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataTypeProperty> .
-# 
-# http://stream-ontology.com/matvoc-core/hasRawValue
-<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataTypeProperty> .
-# 
-# http://stream-ontology.com/matvoc-core/startedAt
-<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataTypeProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Annotations
-# #
-# #################################################################
-# 
-# 
-<http://stream-ontology.com/matvoc-core/finishedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time when the ran is finished."@en .
-# 
-<http://stream-ontology.com/matvoc-core/hasRawValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The hasRawValue property is the coded representation of the measured value."@en .
-# 
-<http://stream-ontology.com/matvoc-core/startedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time when the ran started."@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

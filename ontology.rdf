@@ -10,8 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:schema="http://schema.org/"
-     xmlns:matvoc-core="http://stream-ontology.com/matvoc-core/">
+     xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="http://stream-ontology.com/matvoc-core/">
         <dc:creator>Javad Chamanara</dc:creator>
         <dc:creator>Tatyana Sheveleva</dc:creator>
@@ -19,11 +18,13 @@
         <dc:title xml:lang="en">Materials Vocabulary: MatVoc-Core</dc:title>
         <terms:contributor rdf:resource="https://aksw.org/KurtJunghanns"/>
         <terms:license xml:lang="en">MIT License</terms:license>
-        <bibo:status xml:lang="en">Draft</bibo:status>
+        <terms:modified>2022-12-12</terms:modified>
+        <bibo:status xml:lang="en">STREAM project result, founding tag: 16QK11</bibo:status>
         <vann:preferredNamespacePrefix xml:lang="en">mvc</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://stream-ontology.com/</vann:preferredNamespaceUri>
         <schema:schemaVersion>1.0.0</schema:schemaVersion>
         <rdfs:seeAlso rdf:resource="https://stream-projekt.net"/>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -75,6 +76,13 @@
     
 
 
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
     <!-- http://purl.org/ontology/bibo/status -->
 
 
@@ -100,15 +108,6 @@
 
 
     <owl:AnnotationProperty rdf:about="http://schema.org/schemaVersion"/>
-    
-
-
-    <!-- http://stream-ontology.com/matvoc-core/hasRawValue -->
-
-
-    <owl:AnnotationProperty rdf:about="http://stream-ontology.com/matvoc-core/hasRawValue">
-        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue"/>
-    </owl:AnnotationProperty>
     
 
 
@@ -306,6 +305,17 @@
     <owl:DatatypeProperty rdf:about="http://stream-ontology.com/matvoc-core/finishedAt">
         <rdfs:domain rdf:resource="http://stream-ontology.com/matvoc-core/Run"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The date and time when the ran is finished.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://stream-ontology.com/matvoc-core/hasRawValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://stream-ontology.com/matvoc-core/hasRawValue">
+        <rdfs:domain rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue"/>
+        <rdfs:comment xml:lang="en">The hasRawValue property is the coded representation of the measured value.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -316,6 +326,7 @@
     <owl:DatatypeProperty rdf:about="http://stream-ontology.com/matvoc-core/startedAt">
         <rdfs:domain rdf:resource="http://stream-ontology.com/matvoc-core/Run"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The date and time when the ran started.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -345,6 +356,13 @@
     <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity">
         <owl:equivalentClass rdf:resource="http://stream-ontology.com/matvoc-core/Entity"/>
     </owl:Class>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue -->
+
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue"/>
     
 
 
@@ -553,13 +571,6 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#DataTypeProperty -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#DataTypeProperty"/>
-    
-
-
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
 
@@ -592,66 +603,6 @@
 
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://stream-ontology.com/matvoc-core/finishedAt -->
-
-
-    <owl:NamedIndividual rdf:about="http://stream-ontology.com/matvoc-core/finishedAt">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataTypeProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://stream-ontology.com/matvoc-core/hasRawValue -->
-
-
-    <owl:NamedIndividual rdf:about="http://stream-ontology.com/matvoc-core/hasRawValue">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataTypeProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://stream-ontology.com/matvoc-core/startedAt -->
-
-
-    <owl:NamedIndividual rdf:about="http://stream-ontology.com/matvoc-core/startedAt">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataTypeProperty"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="http://stream-ontology.com/matvoc-core/finishedAt">
-        <rdfs:comment xml:lang="en">The date and time when the ran is finished.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://stream-ontology.com/matvoc-core/hasRawValue">
-        <rdfs:comment xml:lang="en">The hasRawValue property is the coded representation of the measured value.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://stream-ontology.com/matvoc-core/startedAt">
-        <rdfs:comment xml:lang="en">The date and time when the ran started.</rdfs:comment>
-    </rdf:Description>
 </rdf:RDF>
 
 

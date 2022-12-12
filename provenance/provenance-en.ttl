@@ -9,6 +9,7 @@
 	 prov:wasAttributedTo <https://aksw.org/KurtJunghanns>;
 	 dc:contributor <https://aksw.org/KurtJunghanns>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "2022-12-12";
 .
 :agent0 a prov:Agent; foaf:name "Javad Chamanara".
 :agent1 a prov:Agent; foaf:name "Tatyana Sheveleva".

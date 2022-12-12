@@ -13,11 +13,13 @@
                                            <http://purl.org/dc/elements/1.1/title> "Materials Vocabulary: MatVoc-Core"@en ;
                                            <http://purl.org/dc/terms/contributor> <https://aksw.org/KurtJunghanns> ;
                                            <http://purl.org/dc/terms/license> "MIT License"@en ;
-                                           <http://purl.org/ontology/bibo/status> "Draft"@en ;
+                                           <http://purl.org/dc/terms/modified> "2022-12-12" ;
+                                           <http://purl.org/ontology/bibo/status> "STREAM project result, founding tag: 16QK11"@en ;
                                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "mvc"@en ;
                                            <http://purl.org/vocab/vann/preferredNamespaceUri> "http://stream-ontology.com/" ;
                                            <http://schema.org/schemaVersion> "1.0.0" ;
-                                           rdfs:seeAlso <https://stream-projekt.net> .
+                                           rdfs:seeAlso <https://stream-projekt.net> ;
+                                           owl:versionInfo "1.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -43,6 +45,10 @@
 <http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/ontology/bibo/status
 <http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
 
@@ -57,11 +63,6 @@
 
 ###  http://schema.org/schemaVersion
 <http://schema.org/schemaVersion> rdf:type owl:AnnotationProperty .
-
-
-###  http://stream-ontology.com/matvoc-core/hasRawValue
-:hasRawValue rdf:type owl:AnnotationProperty ;
-             rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> .
 
 
 #################################################################
@@ -191,13 +192,21 @@
 ###  http://stream-ontology.com/matvoc-core/finishedAt
 :finishedAt rdf:type owl:DatatypeProperty ;
             rdfs:domain :Run ;
-            rdfs:range xsd:dateTime .
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "The date and time when the ran is finished."@en .
+
+
+###  http://stream-ontology.com/matvoc-core/hasRawValue
+:hasRawValue rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> ;
+             rdfs:comment "The hasRawValue property is the coded representation of the measured value."@en .
 
 
 ###  http://stream-ontology.com/matvoc-core/startedAt
 :startedAt rdf:type owl:DatatypeProperty ;
            rdfs:domain :Run ;
-           rdfs:range xsd:dateTime .
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "The date and time when the ran started."@en .
 
 
 #################################################################
@@ -211,6 +220,10 @@
 ###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity
 <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity> rdf:type owl:Class ;
                                                                owl:equivalentClass :Entity .
+
+
+###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue
+<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredValue> rdf:type owl:Class .
 
 
 ###  http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Measurement
@@ -341,10 +354,6 @@
                  "Term"@iri-based .
 
 
-###  http://www.w3.org/2002/07/owl#DataTypeProperty
-owl:DataTypeProperty rdf:type owl:Class .
-
-
 ###  http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
 
@@ -363,38 +372,6 @@ owl:DataTypeProperty rdf:type owl:Class .
 
 ###  http://xmlns.com/foaf/0.1/Agent
 <http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://stream-ontology.com/matvoc-core/finishedAt
-:finishedAt rdf:type owl:NamedIndividual ,
-                     owl:DataTypeProperty .
-
-
-###  http://stream-ontology.com/matvoc-core/hasRawValue
-:hasRawValue rdf:type owl:NamedIndividual ,
-                      owl:DataTypeProperty .
-
-
-###  http://stream-ontology.com/matvoc-core/startedAt
-:startedAt rdf:type owl:NamedIndividual ,
-                    owl:DataTypeProperty .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-:finishedAt rdfs:comment "The date and time when the ran is finished."@en .
-
-
-:hasRawValue rdfs:comment "The hasRawValue property is the coded representation of the measured value."@en .
-
-
-:startedAt rdfs:comment "The date and time when the ran started."@en .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
